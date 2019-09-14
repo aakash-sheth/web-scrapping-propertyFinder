@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 12 22:34:48 2019
-
-@author: aakas
-"""
-
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
@@ -120,56 +114,6 @@ df123456=df12345.join(df6)
 df1234567=df123456.join(df7)
 df12345678=df1234567.join(df8)
 
-writer = ExcelWriter('realtest-1' + '.xlsx')
+writer = ExcelWriter('Property-data' + '.xlsx')
 df12345678.to_excel(writer, 'Sheet1', index=False)
 writer.save()   
-
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            #Property Description
-             description_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/div[1]/h2'
-             description=driver.find_element_by_xpath(description_xpath).text
-             description_list.append(description)
-             #Price Description
-             price_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/div[2]/div[1]/div[1]/p/span'
-             price=driver.find_element_by_xpath(price_xpath).text
-             price_list.append(price)
-             #Address Description
-             address_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/div[1]/p'
-             address=driver.find_element_by_xpath(address_xpath).text
-             address_list.append(address)
-             #Category Description
-             category_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['str(p+1)+']/a/div[2]/div[2]/div[1]/div[2]/p[1]'
-             category=driver.find_element_by_xpath(category_xpath).text
-             category_list.append(category)
-             #Area Description
-             area_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/div[2]/div[1]/div[2]/p[2]'
-             area=driver.find_element_by_xpath(area_xpath).text
-             area_list.append(area)
-             #Number of bathrooms 
-             NumBath_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/div[2]/div[1]/div[2]/p[2]'
-             NumBath=driver.find_element_by_xpath(NumBath_xpath).text
-             NumBath_list.append(NumBath)
-             #Status of property Description
-             Status_xpath=r'/html/body/main/div/div[2]/div[5]/div[1]/div[2]/div/div/div['+str(p+1)+']/a/div[2]/p'
-             Status=driver.find_element_by_xpath(Status_xpath).text
-             Status_list.append(Status)
